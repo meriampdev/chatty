@@ -1,0 +1,126 @@
+.Chat {
+  display: grid;
+  grid-template-rows: 60px 80vh 10%;
+  width: auto;
+  min-width: 50%;
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+
+  .ChatBody {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: rgba(241, 255, 253, 1);
+    // max-height: 80%;
+    overflow: auto;
+    height: auto;
+
+    .messages {
+      max-width: 255px;
+      word-wrap: break-word;
+      margin-bottom: 12px;
+      line-height: 24px;
+      position:relative;
+      padding: 0 20px;
+      border-radius: 8px;
+      
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        height: 20px;
+      }
+
+      .user-message-input-wrapper {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .input-wrapper {
+          margin: 10px;
+          flex: 45% 1;
+
+          label {
+            font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+            line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+          }
+
+          &.phone-input {
+            // border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 4px;
+            input.MuiInput-input {
+              border-radius: 4px;
+              height: 26px;
+              border-left: 0;
+              border-top-left-radius: 0;
+            }
+            .MuiInputBase-root {
+              border: 1px solid rgba(0,0,0,0.3);
+              border-radius: 4px;
+              &:before {
+                border-bottom: 0 !important;
+              }
+            }
+          }
+
+          &.radio-input {
+            .MuiFormControl-root {
+              .MuiFormLabel-root {
+                font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
+              }
+              padding: 0 !important;
+            }
+            .MuiFormGroup-root {
+              flex-direction: row !important;
+              .MuiRadio-root {
+                padding: 5px;
+              }
+            }
+          }
+
+          &.date-input {
+            border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 4px;
+            .react-datepicker-popper {
+              z-index: 2;
+            }
+            .react-datepicker-wrapper, .react-datepicker__input-container {
+              height: 100%;
+              width: 100%;
+            }
+            input {
+              border: 0 !important;
+              height: 90%;
+              width: 90%;
+              &:focus {
+                outline: none !important;
+              }
+            }
+
+            &.error-date {
+              border: 1px solid red;
+              .error-message {
+                color: red;
+                font-size: calc(10px + (10 - 9) * ((100vw - 300px) / (1600 - 300)));
+              }
+            }
+          }
+        }
+        .next-btn-wrapper {
+          flex: 100% 1;
+          margin: 10px;
+        }
+      }
+    }
+  }
+
+  .footer-progress {
+    .progress-label {
+      position: relative;
+      top: -17px;
+      font-size: 13px;
+      left: 7px;
+      color: #FFFF;
+    }
+  }
+}

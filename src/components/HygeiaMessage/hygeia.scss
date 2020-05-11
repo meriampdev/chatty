@@ -1,0 +1,39 @@
+.hygeia-message {
+  background:#60cfc3;
+  color:#FFFF;
+  
+  border-top-left-radius: 0 !important;
+  // &:before {
+  //   left:8px;
+  //   border-left:20px solid #60cfc3;
+  //   border-bottom-right-radius: 16px 14px;
+  //   transform:translate(0, -2px);
+  // }
+
+  // &:after {
+  //   left: -6px;
+  //   width: 26px;
+  //   background: #60cfc3;
+  //   border-bottom-right-radius: 21px;
+  //   transform: translate(-30px, -2px);
+  //   transform: rotate(241deg);
+  // }
+
+  p {
+    max-width: 255px;
+    word-wrap: break-word;
+    margin-bottom: 12px;
+    line-height: 24px;
+    position:relative;
+    padding:10px 20px;
+    border-radius:25px;
+    margin: 0;
+    
+    &:before, &:after {
+      content:"";
+      position:absolute;
+      bottom:-2px;
+      height:20px;
+    }
+  }
+}
